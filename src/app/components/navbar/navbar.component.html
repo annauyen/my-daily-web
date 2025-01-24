@@ -1,0 +1,37 @@
+<!-- <div class="navbar">
+    <div class="logo">logo</div>
+    <div class="menu">
+      <ul>
+        <li class="active"><a >about</a></li>
+        <li><a>about</a></li>
+        <li><a>about</a></li>
+        <li><a>about</a></li>
+      </ul>
+    </div>
+    <div class="menu">
+      <ul>
+        <li><a>login</a></li>
+        <li><a>register</a></li>
+      </ul>
+    </div>
+</div> -->
+<div class="navbar">
+  <div class="logo">logo</div>
+  <button class="toggle-button" (click)="toggleMenu()">
+    &#9776;
+  </button>
+  <div class="menu" [ngClass]="{ active: isMenuVisible }">
+    <ul>
+      <li class="active"><a>about</a></li>
+      <li><a>services</a></li>
+      <li><a>portfolio</a></li>
+      <li><a>contact</a></li>
+    </ul>
+  </div>
+  <div class="menu" [ngClass]="{ active: isMenuVisible }">
+    <ul>
+      <li><a>login</a></li>
+      <li><a>register</a></li>
+    </ul>
+  </div>
+</div>

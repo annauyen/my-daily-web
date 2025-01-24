@@ -1,1 +1,27 @@
 /* You can add global styles to this file, and also import other style files */
+// @import "bootstrap/scss/functions";
+// @import "bootstrap/scss/variables";
+@import "bootstrap/dist/css/bootstrap.css";
+* {
+  font-family: "Lexend", serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.akaya-telivigala-regular {
+  font-family: "Akaya Telivigala", serif !important;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.sacramento-regular {
+  font-family: "Sacramento", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: large;
+}
+
+
+
+
