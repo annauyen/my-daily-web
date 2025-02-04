@@ -1,0 +1,15 @@
+<h1 class="sacramento-regular">Category title</h1>
+<div class="row" *ngFor="let item of filteredBlogList">
+  <app-blog-list-card
+    [categoryId]="item.categoryId"
+    [blogImg]="item.blogImg"
+    [blogTitle]="item.blogTitle"
+    [blogSubtitle]="item.blogSubtitle"
+    [blogDescription]="item.blogDescription"
+    [routerLink]="[
+      '/blog',
+      item.categoryId,
+      item.blogTitle.replaceAll(' ', '-')
+    ]"
+  />
+</div>

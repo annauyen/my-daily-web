@@ -1,0 +1,9 @@
+.example-card {
+  margin-bottom: 8px;
+  &:hover {
+    cursor: pointer;
+  }
+}
+.card-img {
+  border-radius: 8px !important;
+}

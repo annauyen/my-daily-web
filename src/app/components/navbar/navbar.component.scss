@@ -1,12 +1,16 @@
 .navbar {
   display: flex;
-  background-color: aquamarine;
+  background-color: var(--light-green);
+  color: var(--text);
   align-items: center;
   justify-content: space-between;
   padding: 20px;
 
   .logo {
     font-size: 1.5rem;
+    &:hover {
+      cursor: pointer;
+    }
   }
 
   .toggle-button {
@@ -31,20 +35,37 @@
         padding: 8px 20px;
 
         &.active {
-          background-color: blueviolet;
+          background-color: var(--dark-green);
           color: #fff;
           border-radius: 20px;
+        }
+        &:hover {
+          background-color: #fff;
+          border-radius: 20px;
+          color: var(--text);
+          cursor: pointer;
         }
       }
     }
 
-    &.active {
-      display: block; // Show menu when active
+    overflow: hidden; // Prevent content overflow during transition
+    max-height: none; // Collapsed state
+    transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out; // Smooth transition
+    opacity: 0;
+
+    &.activeMenu {
+      max-height: 500px; // Expanded state (set a large enough value)
+      opacity: 1;
     }
 
     @media (max-width: 768px) {
-      display: none; // Hide menu by default
       width: 100%;
+      max-height: 0; // Collapsed state by default
+
+      &.activeMenu {
+        max-height: 500px; // Expanded state for menu
+        opacity: 1;
+      }
 
       ul {
         flex-direction: column;
@@ -61,6 +82,13 @@
   @media (max-width: 768px) {
     flex-direction: column;
     align-items: flex-start;
+
+    .logo {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      margin-bottom: 0.5rem;
+    }
 
     .toggle-button {
       display: block;

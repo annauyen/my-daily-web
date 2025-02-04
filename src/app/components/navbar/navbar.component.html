@@ -1,37 +1,28 @@
-<!-- <div class="navbar">
-    <div class="logo">logo</div>
-    <div class="menu">
-      <ul>
-        <li class="active"><a >about</a></li>
-        <li><a>about</a></li>
-        <li><a>about</a></li>
-        <li><a>about</a></li>
-      </ul>
-    </div>
-    <div class="menu">
-      <ul>
-        <li><a>login</a></li>
-        <li><a>register</a></li>
-      </ul>
-    </div>
-</div> -->
 <div class="navbar">
-  <div class="logo">logo</div>
-  <button class="toggle-button" (click)="toggleMenu()">
-    &#9776;
-  </button>
-  <div class="menu" [ngClass]="{ active: isMenuVisible }">
+  <div class="logo">
+    <span>Logo</span>
+    <button mat-mini-fab class="toggle-button" (click)="toggleMenu()">
+      &#9776;
+    </button>
+  </div>
+  <div class="menu" [ngClass]="{ activeMenu: isMenuVisible }">
     <ul>
-      <li class="active"><a>about</a></li>
-      <li><a>services</a></li>
-      <li><a>portfolio</a></li>
-      <li><a>contact</a></li>
+      <li routerLink="/blog" routerLinkActive="active"><a>Blog</a></li>
+      <li routerLink="/portfolio" routerLinkActive="active">
+        <a>Portfolio</a>
+      </li>
+      <li routerLink="/about" routerLinkActive="active"><a>About</a></li>
+      <li routerLink="/contact" routerLinkActive="active"><a>Contact</a></li>
     </ul>
   </div>
-  <div class="menu" [ngClass]="{ active: isMenuVisible }">
+  <div class="menu" [ngClass]="{ activeMenu: isMenuVisible }">
     <ul>
-      <li><a>login</a></li>
-      <li><a>register</a></li>
+      <li routerLinkActive="active" routerLink="/login"><a>Login</a></li>
+      <li routerLink="/register" routerLinkActive="active"><a>Register</a></li>
     </ul>
   </div>
+</div>
+
+<div class="container">
+  <router-outlet />
 </div>

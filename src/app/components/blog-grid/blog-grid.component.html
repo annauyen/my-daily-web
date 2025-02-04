@@ -1,0 +1,12 @@
+<h1 class="sacramento-regular">Blog category</h1>
+<div class="row">
+  <div class="col-md-4" *ngFor="let item of blogs">
+    <app-blog-card
+      [id]="item.id"
+      [logoIcon]="item.logoIcon"
+      [title]="item.title"
+      [description]="item.description"
+      [routerLink]="['/blog', item.id]"
+    ></app-blog-card>
+  </div>
+</div>
